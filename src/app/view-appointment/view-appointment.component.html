@@ -1,0 +1,54 @@
+<style type="text/css">
+  th{
+      color: #45a29e;
+  }
+  td,i{
+      color: #c5c6c7;
+  }
+</style>
+<h4 class="text-center" style="color: #66fcf1">
+  View Appointment...
+</h4>
+
+<!-- ________________________________________________________ -->
+
+<div class="table-responsive">
+  <table class="table table-bordered-dark">
+      <thead class="thead-secondary">
+          <tr>
+          <th class="h1 header " scope="col">Sl NO</th>
+          <th class="h2 header" scope="col">Name</th>
+          <th class="h3 header" scope="col">Address</th>
+          <th class="h4 header" scope="col">City</th>
+          <th class="h5 header" scope="col">Package</th>
+          <th class="h6 header " scope="col">Trainer Preference</th>
+          <th class="h7 h6 header" scope="col">Phone</th>
+          
+          <td scope="col"></td>
+          <td scope="col"></td>
+          </tr>
+      </thead>
+      <tbody class="display-8">
+      <tr *ngFor="let tempUser of appointmentdata">
+          <td >{{tempUser.id}}</td>
+          <td >{{tempUser.firstname}} {{tempUser.lastname}}</td>
+          <td >{{tempUser.streetaddress}}</td>
+          <td >{{tempUser.city}}</td>
+          <td >{{tempUser.packages}}</td>
+          <td >{{tempUser.trainerpreference}}</td>
+          <td >{{tempUser.phonenumber}}</td>
+          <td >
+            <a class="btn" (click)="editUser(tempUser)">
+              <i class="fas fa-pencil-alt"></i>
+            </a>
+          </td>
+          <td >
+            <a class="btn text-danger" (click)="deleteUser(tempUser.id)">
+              X
+            </a>
+          </td>
+          </tr>
+          
+      </tbody>
+  </table>
+</div>

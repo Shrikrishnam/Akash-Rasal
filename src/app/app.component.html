@@ -1,0 +1,59 @@
+<style type="text/css">
+  a{
+    cursor: pointer
+  }
+  .side-bar{
+    background-color: #1f2833
+  }
+</style>
+<!-- Header -->
+<div class="container-fluid text-light" style="background-color:#0c0d12">
+  <div class="row">
+      <div class="col-sm col-4 mr-auto text-center" style="max-height: 25vh;">
+          <img src="https://www.maxpixel.net/static/photo/1x/Arm-Fitness-Muscles-Muscle-Bodybuilder-Strong-310873.png" style="width: auto; height: 25vh;">
+          <!-- "https://via.placeholder.com/550x150">         -->
+      </div>
+      <div class="mx-auto col-sm text-right">
+          <div class="h1" style="color: #66fcf1"> Fitness Tracker App</div>
+          <div class="text-muted">A Global Initiative</div>
+      </div>
+  </div>
+</div>
+<!-- Header end -->
+
+<!-- Nav bar -->
+<div>
+ <nav class="navbar navbar-expand-lg navbar-dark " style="background-color:#1f2833">
+      <a class="navbar-brand" href="#" style="color: #66fcf1" >Fitness Tracker App</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ml-auto">
+              <li class="nav-item" (click)="landingpage()" ><a style="color: #45a29e" class=" nav-link">Home</a> </li>
+              <li class="nav-item" (click)="placeAppointment()"><a style="color: #45a29e" class=" nav-link">Place Appointment</a></li>
+              <li class="nav-item" (click)="viewAppointment()"><a style="color: #45a29e" class=" nav-link">View Appointment</a></li>
+              <li class="nav-item" (click)="contactUspage()"><a style="color: #45a29e" class=" nav-link">Contact Us</a></li>
+          </ul>
+      </div>
+  </nav>
+</div>
+<!-- Nav bar end -->
+
+<!-- Page -->
+<div class="d-flex " id="wrapper" style="min-height: 72.5vh">
+  <!-- Sidebar -->
+  <div class="col-md-2 border-right d-none d-md-block"  id="sidebar-wrapper" style="background-color: #1f2833">
+    <div class="list-group-lg list-group-flush" style="background-color: #1f2833">
+      <a class="side-bar list-group-item list-group-item-action text-light" (click)="landingpage()">Home</a>
+      <a class="side-bar list-group-item list-group-item-action text-light" (click)="placeAppointment()">Place Appointment</a>
+      <a class="side-bar list-group-item list-group-item-action text-light"(click)="viewAppointment()">View Appointment</a>
+      <a class="side-bar list-group-item list-group-item-action text-light" (click)="contactUspage()">Contact Us</a>
+    </div>
+  </div>
+  <div id="page-content-wrapper" class="text-light container-fluid" style="background-color: #15171f">
+      <!-- Router -->
+      <router-outlet></router-outlet>
+      <!-- Router ends -->
+  </div>
+</div>

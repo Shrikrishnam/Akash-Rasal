@@ -1,0 +1,10 @@
+/* You can add global styles to this file, and also import other style files */
+.header{
+	font-size: 0.95rem; 
+}
+
+.navbar-light{
+	text-decoration-color: red;
+	color: white;
+	background-color: #1f2833;
+}

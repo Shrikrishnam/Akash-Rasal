@@ -1,0 +1,65 @@
+<style type="text/css">
+    label{
+        color: #45a29e
+    }
+</style>
+<div class="container">
+    <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" novalidate>
+        <div class=" text-center"><label class="h4" style="color: #66fcf1">Contact-us</label></div>
+        <div class="form-row ">
+            <div class="form-group col-md-6">
+                <label for="exampleInputfirstname">First Name</label>
+                <input type="text" class="form-control" [class.is-invalid]="contactForm.controls.firstname.invalid && contactForm.controls.firstname.touched" pattern="[A-Za-z ]*"  formControlName="firstname" placeholder="First Name">
+                <small class="form-text text-danger"
+                    *ngIf="contactForm.controls.firstname.invalid && contactForm.controls.firstname.touched || contactForm.controls.firstname.touched && contactForm.controls.firstname.errors?.required">
+                    Please enter valid first name.!
+                </small>
+            </div>
+
+            <div class="form-group col-md-6">
+                <label for="exampleInputlastname">Last Name</label>
+                <input type="text" class="form-control" formControlName="lastname" [class.is-invalid]="contactForm.controls.lastname.invalid && contactForm.controls.lastname.touched" pattern="[A-Za-z ]*" placeholder="Last Name">
+                <small class="form-text text-danger"
+                    *ngIf="contactForm.controls.lastname.invalid && contactForm.controls.lastname.touched || contactForm.controls.lastname.touched && contactForm.controls.lastname.errors?.required">
+                    Please enter last name.!
+                </small>
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="exampleInputphonenumber">Phone Number</label>
+                <input type="number" class="form-control" formControlName="phonenumber" [class.is-invalid]="contactForm.controls.phonenumber.invalid && contactForm.controls.phonenumber.touched" pattern="^\d{10}$" placeholder="Phone Number">
+                <small class="form-text text-danger"
+                    *ngIf="contactForm.controls.phonenumber.invalid && contactForm.controls.phonenumber.touched || contactForm.controls.phonenumber.touched && contactForm.controls.phonenumber.errors?.required">
+                    Please enter phone number.!
+                </small>
+            </div>
+
+            <div class="form-group col-md-6">
+                <label for="exampleInputemail">Email</label>
+                <input type="email" class="form-control" formControlName="email" [class.is-invalid]="contactForm.controls.email.invalid && contactForm.controls.email.touched" pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" placeholder="Email">
+                <small class="form-text text-danger"
+                    *ngIf="contactForm.controls.email.touched && contactForm.controls.email.errors?.required">
+                    Please enter email.!
+                </small>
+                <small class="form-text text-danger"
+                    *ngIf="contactForm.controls.email.invalid && contactForm.controls.email.touched || contactForm.controls.email.touched && contactForm.controls.email.errors?.email">
+                    Enter the valid email .!
+                </small>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="exampleInputmessage">Message</label>
+            <textarea type="text" class="form-control" formControlName="message" [class.is-invalid]="contactForm.controls.message.invalid && contactForm.controls.message.touched" pattern="[A-Za-z0-9 ]*" placeholder="Message"></textarea>
+            <small class="form-text text-danger"
+                *ngIf="contactForm.controls.message.touched && contactForm.controls.message.errors?.required">
+                Please enter message.!
+            </small>
+
+        </div>
+        <button class="btn btn-light" type="submit" [disabled]="contactForm.invalid" >Submit</button>
+
+    </form>
+</div>
